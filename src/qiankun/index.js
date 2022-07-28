@@ -23,10 +23,9 @@ for (const key in process.env) {
     const name = key.split('VUE_APP_CHILD_')[1];
     _apps.push({
       name,
-      entry: process.env.NODE_ENV === 'production' ? `/${name}/` : process.env[key],
+      entry: process.env[key],
       container: '#app_child',
-      activeRule:
-        process.env.NODE_ENV === 'production' ? `/${process.env.VUE_APP_NAME}/${name}` : `/${name}`,
+      activeRule: `/${name}`,
     });
   }
 }
