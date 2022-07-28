@@ -61,7 +61,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-#mainWisdom {
+#main {
   position: relative;
   margin: 0;
 }

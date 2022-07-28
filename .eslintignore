@@ -3,4 +3,4 @@ dist
 tests
 .idea
 .vscode/*
-dist_mainWisdom
+dist_main
