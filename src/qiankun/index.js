@@ -102,8 +102,10 @@ export function registerApps() {
     app: 'main',
   });
   start({
-    prefetch: true, // 可选，是否开启预加载，默认为 true。
-    sandbox: true, // 可选，是否开启沙箱，默认为 true。从而确保微应用的样式不会对全局造成影响。
+    prefetch: process.env.NODE_ENV === 'production' ? 'all' : false, // 可选，是否开启预加载
+    sandbox: {
+      experimentalStyleIsolation: true,
+    }, // 可选，是否开启沙箱，默认为 true。从而确保微应用的样式不会对全局造成影响。
     singular: true, // 可选，是否为单实例场景，单实例指的是同一时间只会渲染一个微应用。默认为 true。
     // excludeAssetFilter: (assetUrl) => { console.log(assetUrl); }, // 可选，指定部分特殊的动态加载的微应用资源（css/js) 不被qiankun 劫持处理
   });
